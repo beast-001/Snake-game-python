@@ -34,8 +34,7 @@ def text_screen(text,color,x,y):
     gameWindow.blit(screen_text,[x,y])
 
 def draw_snake(snake_x,snake_y):
-    snake=[]
-    
+    snake=[(snake_x,snake_y)]
     
 
 while not exit_game:
@@ -66,6 +65,7 @@ while not exit_game:
         score+=1
         food_x=random.randint(0,screen_width)
         food_y=random.randint(0,screen_height)
+        draw_snake.snake.append((food_x,food_y))
 
     gameWindow.fill(white)
     text_screen("Sccore: "+ str(score*10), red, 5, 5)
